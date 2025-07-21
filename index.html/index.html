@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rado Herizo | Virtual Assistant</title>
+  <link rel="icon" type="image/png" href="fav.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #0a3d62;
+      --bg: #f9f9f9;
+      --text: #222;
+    }
+    [data-theme="dark"] {
+      --primary: #1e90ff;
+      --bg: #121212;
+      --text: #e0e0e0;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: row;
+      min-height: 100vh;
+    }
+    .sidebar {
+      background-color: var(--primary);
+      color: white;
+      width: 300px;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .sidebar img {
+      width: 160px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+    .sidebar h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      animation: fadeInDown 1s ease-out;
+    }
+    .sidebar p {
+      font-size: 14px;
+      text-align: center;
+      animation: fadeInUp 1s ease-out;
+    }
+    .main {
+      flex: 1;
+      padding: 40px;
+    }
+    section {
+      margin-bottom: 60px;
+      animation: fadeIn 1s ease-out;
+    }
+    h2 {
+      font-size: 24px;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    .service, .sample {
+      margin-bottom: 20px;
+    }
+    .contact a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .btn {
+      display: inline-block;
+      background-color: var(--primary);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin-top: 20px;
+      text-decoration: none;
+    }
+    img.sample-preview {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+      padding: 10px 20px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    form button {
+      background-color: var(--primary);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        padding: 20px;
+      }
+      .sidebar p {
+        display: none;
+      }
+      .main {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()">Toggle Dark Mode</button>
+  <aside class="sidebar">
+    <img src="sary.png" alt="Photo of Rado Herizo">
+    <h1>Rado Herizo</h1>
+    <p>Professional Virtual Assistant<br>Specialized in email handling, translation, transcription, and document formatting.</p>
+  </aside>
+  <main class="main">
+    <section>
+      <h2>About Me</h2>
+      <p>I am a reliable and professional virtual assistant offering administrative support, document formatting, transcription, email management, and multilingual translation (French-English-Malagasy). My goal is to help clients save time and improve efficiency.</p>
+    </section>
+
+    <section>
+      <h2>Services</h2>
+      <div class="service">📧 Professional email handling</div>
+      <div class="service">🗂️ Data entry and file organization</div>
+      <div class="service">🌐 Translation FR/EN/MG</div>
+      <div class="service">🎧 Audio/Video transcription</div>
+      <div class="service">📄 Resume and document formatting</div>
+    </section>
+
+    <section>
+      <h2>Work Samples</h2>
+      <div class="sample">
+        <strong>Email Sample:</strong><br>
+        <em>Subject:</em> Meeting Confirmation<br>
+        <em>Content:</em> Hello Mr. Johnson, this is to confirm our meeting scheduled on Thursday at 10:30 AM via Zoom. Let me know if you’d like to reschedule.<br>Best regards,<br>Rado Herizo
+      </div>
+      <div class="sample">
+        <strong>Transcription Sample:</strong><br>
+        <em>Audio:</em> “Hi team, just reminding you our client call is at 3PM.”<br>
+        <em>Text:</em> Hi team, just reminding you our client call is at 3PM.
+      </div>
+      <div class="sample">
+        <strong>Document Formatting:</strong><br>
+        Professional layout for CVs and business reports using MS Word and Canva.<br>
+        <img src="sary-cv.png" alt="CV Preview" class="sample-preview">
+      </div>
+      <div class="sample">
+        <strong>Excel Table:</strong><br>
+        Clients list with country, email, and status.<br>
+        <img src="tableau.png" alt="Excel Table" class="sample-preview">
+      </div>
+      <div class="sample">
+        <strong>Canva Design:</strong><br>
+        Example of a clean and professional Canva business flyer layout.<br>
+        <img src="mockup.png" alt="Canva Mockup" class="sample-preview">
+      </div>
+    </section>
+
+    <section>
+      <h2>FAQ - Frequently Asked Questions</h2>
+      <div class="sample">
+        <strong>Q1: What languages do you work with?</strong><br>
+        A: I work with English, French, and Malagasy for translation and communication.
+      </div>
+      <div class="sample">
+        <strong>Q2: How do I hire you?</strong><br>
+        A: You can contact me via email or using the contact form, and I’ll respond within 24 hours.
+      </div>
+      <div class="sample">
+        <strong>Q3: What tools do you use?</strong><br>
+        A: I use Gmail, Google Docs, Excel, Canva, Trello, and Zoom, depending on client needs.
+      </div>
+      <div class="sample">
+        <strong>Q4: How much do you charge?</strong><br>
+        A: My rates vary by project, but I offer affordable, flexible pricing. Feel free to ask for a quote!
+      </div>
+    </section>
+
+    <section class="contact">
+      <h2>Contact</h2>
+      <form action="https://formsubmit.io/send/herizorado31@gmail.com" method="POST" onsubmit="showConfirmation()">
+        <input type="hidden" name="_redirect" value="thankyou.html" />
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <p style="margin-top:20px">📧 Email: <a href="mailto:herizorado31@gmail.com">herizorado31@gmail.com</a></p>
+    </section>
+  </main>
+
+  <script>
+    function toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      document.documentElement.setAttribute('data-theme', currentTheme === 'dark' ? 'light' : 'dark');
+    }
+    function showConfirmation() {
+      alert("Your message has been sent! You'll be redirected to a confirmation page.");
+    }
+  </script>
+</body>
+</html>
